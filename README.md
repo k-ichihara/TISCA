@@ -1,8 +1,8 @@
-#README for TISCA
+# README for TISCA
 
 2021-3-26 Kazuya Ichihara
 
-####Obtain genome annotation files
+#### Obtain genome annotation files
 
 * Download human genome and transcriptome annotation files from GENCODE (Harrow et al., 2012).
 
@@ -19,7 +19,7 @@ wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/gtfToGenePred
 gtfToGenePred gencode.v31.annotation.gtf gencode.v31.annotation.genePred.txt
 ```
 
-####Execute RibORF
+#### Execute RibORF
 
 * Download RibORF package from https://github.com/zhejilab/RibORF/. 
 
@@ -52,13 +52,13 @@ perl ./RibORF/RibORF.1.0/readDist.pl -f Ribo_corrected.sam -g gencode.v31.annota
 perl ./RibORF/RibORF.1.0/ribORF.pl -f Ribo_corrected.sam -c ./RibORF_output/candidateORF.genepred.txt -o RibORF_output
 ```
 
-####Prepare annotation files for TISCA
+#### Prepare annotation files for TISCA
 
 ```bash
 python CreateAnnotation.py
 ```
 
-####Create read aggregation plots
+#### Create read aggregation plots
 
 ```
 python readdist.py ./data/Ribo.bam ./annotation/Ribo
@@ -67,7 +67,7 @@ python readdist.py ./data/Sel.bam ./annotation/Sel
 python readend.py ./data/Sel.bam ./annotation/Sel
 ```
 
-####Execute TISCA
+#### Execute TISCA
 
 ```
 python TISCA.py
