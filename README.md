@@ -1,6 +1,14 @@
 # README for TISCA
 
-2021-3-26 Kazuya Ichihara
+2021-4-8 Kazuya Ichihara
+
+#### Python packages
+
+* Python 3.7.0
+* Numpy 1.17.3
+* Pysam 0.15.3
+* Scipy 1.4.0rc1
+* Pandas 0.25.3
 
 #### Obtain genome annotation files
 
