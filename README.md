@@ -43,14 +43,14 @@ perl ./RibORF/RibORF.1.0/ORFannotate.pl \
 * Examine the read distribution
 
 ```bash
-samtools view -@ 8 -h ./data/Ribo.bam > Ribo.sam
+samtools view -@ 8 -h Ribo.bam > Ribo.sam
 perl ./RibORF/RibORF.1.0/readDist.pl -f ./Ribo.sam -g gencode.v31.annotation.genePred.txt -o RibORF_output
 ```
 
 * Offset correction
 
 ```bash
-perl ./RibORF/RibORF.1.0/offsetCorrect.pl -r Ribo.sam -p ./data/offset.correction.parameters.txt -o Ribo_corrected.sam
+perl ./RibORF/RibORF.1.0/offsetCorrect.pl -r Ribo.sam -p offset.correction.parameters.txt -o Ribo_corrected.sam
 perl ./RibORF/RibORF.1.0/readDist.pl -f Ribo_corrected.sam -g gencode.v31.annotation.genePred.txt -o RibORF_output
 ```
 
@@ -69,10 +69,10 @@ python CreateAnnotation.py
 #### Create read aggregation plots
 
 ```
-python readdist.py ./data/Ribo.bam ./annotation/Ribo
-python readdist.py ./data/GTI.bam ./annotation/GTI
-python readdist.py ./data/Sel.bam ./annotation/Sel
-python readend.py ./data/Sel.bam ./annotation/Sel
+python readdist.py Ribo.bam ./annotation/Ribo
+python readdist.py GTI.bam ./annotation/GTI
+python readdist.py Sel.bam ./annotation/Sel
+python readend.py Sel.bam ./annotation/Sel
 ```
 
 #### Execute TISCA
