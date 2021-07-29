@@ -144,7 +144,7 @@ def TIS_scanning(CHX_in, LTM_in, Pro_in):
         scan_point = release_dict[name]
         Ribo_name = Ribo[Ribo.index == name]
         for j in range(len(peak_start)):
-            for offset in range(12,15):
+            for offset in range(11,14):
                 TIS_start_offset = int(peak_start[j] + offset)
                 peak3_eff = scan_point[:, (scan_point[0] <= TIS_start_offset + scan_right) & (scan_point[0] >= TIS_start_offset + scan_left)]
                 if peak3_eff.sum() == 0:
